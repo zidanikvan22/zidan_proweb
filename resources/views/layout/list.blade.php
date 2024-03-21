@@ -10,8 +10,10 @@
         @include('components.header')
     </header>
 
-    <h1>List Produk</h1>
+    <h1 class="text-lg font-serif">List Produk</h1>
     <div class="container">
+        
+       
         <main>
             @yield('content')
         </main>
