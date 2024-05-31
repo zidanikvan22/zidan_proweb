@@ -23,6 +23,7 @@
                     <th>Nama Produk</th>
                     <th>Deskripsi Produk</th>
                     <th>Harga Produk</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,6 +33,13 @@
                     <td>{{ $item }}</td>
                     <td>{{ $desc[$index] }}</td>
                     <td>{{ $harga[$index] }}</td>
+                    <td>
+                        <form action="{{ route('produk.delete', $id[$index]) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-active btn-primary" type="submit" onclick="return confirm('Are you sure you want to delete {{ $item }}?')">Delete</button>
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

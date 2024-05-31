@@ -23,5 +23,7 @@ Route::get('/produk', [ProdukController::class, 'show']);
 
 Route::post('/produk', [ProdukController::class, 'simpan'])->name('produk.simpan' );
 
+Route::delete('/produk/{id}', [ProdukController::class, 'delete'])->name('produk.delete' );
+
 
 
